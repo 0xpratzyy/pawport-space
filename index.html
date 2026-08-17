@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pawport — an official passport for your very good dog</title>
+<meta name="description" content="Every walk, bath and zoomie — stamped into an official little passport for your very good dog.">
+<meta property="og:title" content="Pawport">
+<meta property="og:description" content="An official passport for your very good dog.">
+<meta property="og:image" content="https://pawport.space/assets/shot_hero.jpg">
+<link rel="icon" href="assets/icon.png">
+<style>
+  @font-face { font-family: 'Baloo'; src: url('assets/Baloo2-ExtraBold.ttf'); font-weight: 800; }
+  @font-face { font-family: 'Baloo'; src: url('assets/Baloo2-Bold.ttf'); font-weight: 700; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --ink: #121216; --meta: #6b6b74; --blue: #2F6BFF; --sky: #BFE0FF;
+    --butter: #FFE9AD; --pill: #F2F2F5;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Baloo', system-ui, sans-serif; color: var(--ink); background: #fff; overflow-x: hidden; }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+  /* hero — real product: the app in a phone, covers floating beside it */
+  .hero {
+    background: linear-gradient(180deg, #8FC2FF 0%, #C8E4FF 60%, #ffffff 100%);
+    text-align: center; padding: 64px 0 0; position: relative; overflow: hidden;
+  }
+  .stage { position: relative; width: min(760px, 94vw); margin: 34px auto -40px; }
+  .phone {
+    width: min(320px, 62vw); margin: 0 auto; background: #17171b;
+    border-radius: 52px; padding: 13px;
+    box-shadow: 0 40px 90px rgba(20,60,160,.32);
+    position: relative; z-index: 3;
+  }
+  .phone img { width: 100%; display: block; border-radius: 40px; }
+  .side-cover {
+    position: absolute; width: min(190px, 30vw); border-radius: 16px;
+    box-shadow: 0 26px 60px rgba(20,60,160,.28); z-index: 2;
+    animation: bob 6s ease-in-out infinite;
+  }
+  .side-cover.left { left: 0; top: 90px; transform: rotate(-9deg); }
+  .side-cover.right { right: 0; top: 150px; transform: rotate(9deg); animation-delay: 1.4s; }
+  @media (max-width: 620px) { .side-cover { display: none; } }
+  .badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(255,255,255,.85); border-radius: 999px; padding: 8px 18px;
+    font-size: 14px; font-weight: 700; color: var(--ink); letter-spacing: .3px;
+  }
+  .badge .dot { width: 8px; height: 8px; border-radius: 50%; background: #34c759; }
+  h1 {
+    font-size: clamp(44px, 8vw, 92px); line-height: .98; letter-spacing: -1px;
+    margin: 26px auto 14px; max-width: 900px; color: #0e2a5e;
+  }
+  h1 .fancy { color: #fff; text-shadow: 0 4px 0 rgba(20,60,160,.22); }
+  .sub { font-size: clamp(17px, 2.4vw, 22px); font-weight: 700; color: #2b4a7d; max-width: 620px; margin: 0 auto 30px; }
+  .cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 26px; }
+  .btn {
+    display: inline-block; padding: 16px 34px; border-radius: 999px; text-decoration: none;
+    font-weight: 800; font-size: 18px; transition: transform .15s ease;
+  }
+  .btn:hover { transform: scale(1.04); }
+  .btn-dark { background: var(--ink); color: #fff; }
+  .btn-ghost { background: rgba(255,255,255,.9); color: var(--ink); }
+  .hero-art { width: min(560px, 86vw); display: block; margin: 0 auto -6px; filter: drop-shadow(0 30px 60px rgba(30,80,190,.25)); }
+  .float { position: absolute; font-size: 42px; animation: bob 5s ease-in-out infinite; opacity: .9; z-index: 0; pointer-events: none; }
+  @media (max-width: 900px) { .float { display: none; } }
+  @keyframes bob { 0%,100% { transform: translateY(0) rotate(-6deg); } 50% { transform: translateY(-16px) rotate(6deg); } }
+
+  /* covers marquee */
+  .covers { padding: 84px 0 30px; text-align: center; }
+  h2 { font-size: clamp(30px, 4.5vw, 48px); letter-spacing: -.5px; margin-bottom: 10px; }
+  .kicker { color: var(--blue); font-weight: 800; letter-spacing: 2.5px; font-size: 13px; text-transform: uppercase; }
+  .lead { color: var(--meta); font-weight: 700; font-size: 18px; max-width: 560px; margin: 8px auto 36px; }
+  .marquee { overflow: hidden; padding: 20px 0 34px; }
+  .marquee-track { display: flex; gap: 26px; width: max-content; animation: slide 28s linear infinite; }
+  .marquee:hover .marquee-track { animation-play-state: paused; }
+  @keyframes slide { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .cover-card { width: 190px; border-radius: 18px; transform: rotate(-2.5deg); transition: transform .2s; box-shadow: 0 18px 40px rgba(0,0,0,.16); }
+  .cover-card:nth-child(even) { transform: rotate(2.5deg); }
+  .cover-card:hover { transform: rotate(0) scale(1.06); }
+
+  /* screenshots */
+  .shots { background: linear-gradient(180deg, #fff, #FFF3F6 40%, #fff); padding: 60px 0; text-align: center; }
+  .shot-row { display: flex; gap: 26px; justify-content: flex-start; overflow-x: auto; padding: 30px 24px 44px; scroll-snap-type: x mandatory; }
+  .shot-row::-webkit-scrollbar { display: none; }
+  .shot { width: min(300px, 74vw); flex: 0 0 auto; border-radius: 28px; box-shadow: 0 24px 60px rgba(0,0,0,.18); scroll-snap-align: center; }
+
+  /* features */
+  .features { padding: 70px 0 30px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 22px; margin-top: 40px; }
+  .card { background: var(--pill); border-radius: 26px; padding: 30px 26px; text-align: left; }
+  .card .emoji { font-size: 36px; }
+  .card h3 { font-size: 22px; margin: 12px 0 6px; }
+  .card p { color: var(--meta); font-weight: 700; font-size: 15.5px; line-height: 1.45; }
+  .card.blue { background: #E7F0FF; } .card.pink { background: #FFE9EF; }
+  .card.mint { background: #E5F6EA; } .card.butter { background: #FFF3D1; }
+
+  /* polaroids */
+  .life { padding: 80px 0; text-align: center; }
+  .pols { display: flex; justify-content: center; gap: 18px; flex-wrap: wrap; margin-top: 40px; }
+  .pol { background: #fff; padding: 12px 12px 40px; box-shadow: 0 16px 40px rgba(0,0,0,.14); border-radius: 6px; transform: rotate(-4deg); transition: transform .2s; }
+  .pol:nth-child(2) { transform: rotate(3deg); } .pol:nth-child(3) { transform: rotate(-2deg); } .pol:nth-child(4) { transform: rotate(5deg); }
+  .pol:hover { transform: rotate(0) scale(1.05); z-index: 2; }
+  .pol img { width: 170px; height: 200px; object-fit: cover; border-radius: 4px; display: block; }
+  .pol span { font-size: 15px; font-weight: 700; color: var(--meta); display: block; margin-top: 10px; }
+
+  /* cta */
+  .cta {
+    background: linear-gradient(180deg, #2F6BFF, #1F4FCC); color: #fff;
+    border-radius: 36px; text-align: center; padding: 70px 30px; margin: 40px auto 90px;
+  }
+  .cta h2 { color: #fff; }
+  .cta p { color: #cfdfff; font-weight: 700; font-size: 18px; margin: 8px 0 30px; }
+
+  footer { text-align: center; color: var(--meta); font-weight: 700; font-size: 14px; padding: 30px 0 46px; }
+  footer a { color: var(--meta); }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <span class="float" style="left:8%; top:120px;">⭐️</span>
+  <span class="float" style="right:10%; top:170px; animation-delay:1.2s;">❤️</span>
+  <span class="float" style="left:16%; top:420px; animation-delay:2s;">🎾</span>
+  <span class="float" style="right:15%; top:460px; animation-delay:.6s;">🦴</span>
+  <div class="wrap">
+    <span class="badge"><span class="dot"></span>Bureau of Very Good Dogs · now stamping</span>
+    <h1>an official <span class="fancy">passport</span><br>for your very good dog</h1>
+    <p class="sub">Every walk, bath and zoomie — stamped into a beautiful little book. The Bureau handles the paperwork.</p>
+    <div class="cta-row">
+      <a class="btn btn-dark" href="#get">Get the app</a>
+      <a class="btn btn-ghost" href="#covers">See the covers</a>
+    </div>
+    <div class="stage">
+      <img class="side-cover left" src="assets/cover_velvet_emerald.jpg" alt="Royal velvet cover">
+      <img class="side-cover right" src="assets/cover_quilted_blush.jpg" alt="Quilted puffer cover">
+      <div class="phone"><img src="assets/app_hero.jpg" alt="Pawport app — teddy fur passport"></div>
+    </div>
+  </div>
+</section>
+
+<section class="covers" id="covers">
+  <div class="wrap">
+    <div class="kicker">The Passport</div>
+    <h2>dress it like the goodest dog</h2>
+    <p class="lead">Six materials, eighteen colourways, your dog's name on the plate. Teddy fur to royal velvet.</p>
+  </div>
+  <div class="marquee"><div class="marquee-track" id="track">
+    <img class="cover-card" src="assets/cover_teddy_caramel.jpg" alt="Teddy fur cover">
+    <img class="cover-card" src="assets/cover_quilted_blush.jpg" alt="Quilted puffer cover">
+    <img class="cover-card" src="assets/cover_knit_sky.jpg" alt="Knit cover">
+    <img class="cover-card" src="assets/cover_corduroy_rust.jpg" alt="Corduroy scout cover">
+    <img class="cover-card" src="assets/cover_velvet_emerald.jpg" alt="Royal velvet cover">
+  </div></div>
+</section>
+
+<section class="shots">
+  <div class="wrap">
+    <div class="kicker">Inside</div>
+    <h2>the book writes itself</h2>
+    <p class="lead">Snap a photo — the Bureau does the stamp, the caption and the paw of approval.</p>
+  </div>
+  <div class="shot-row">
+    <img class="shot" src="assets/shot_hero.jpg" alt="Passport cover">
+    <img class="shot" src="assets/shot_pages.jpg" alt="Stamped pages">
+    <img class="shot" src="assets/shot_picker.jpg" alt="Cover picker">
+    <img class="shot" src="assets/shot_profile.jpg" alt="Dog profile">
+    <img class="shot" src="assets/shot_diary.jpg" alt="Diary calendar">
+    <img class="shot" src="assets/shot_garnish.jpg" alt="Art department">
+  </div>
+</section>
+
+<section class="features">
+  <div class="wrap">
+    <div class="kicker">Daily life</div>
+    <h2>everything a very good dog files</h2>
+    <div class="grid">
+      <div class="card blue"><div class="emoji">🦮</div><h3>Walk mode</h3><p>The route, the weather, and every friend met along the way — pinned to the map.</p></div>
+      <div class="card pink"><div class="emoji">📮</div><h3>Stamp diary</h3><p>Each month laid out as a sheet of postage stamps. Tap a day, relive it.</p></div>
+      <div class="card mint"><div class="emoji">💉</div><h3>Health drawer</h3><p>Vaccines, meds, weight and documents — tidy, reminded, exportable.</p></div>
+      <div class="card butter"><div class="emoji">🎨</div><h3>Art Department</h3><p>AI portraits from renaissance oil to the space program. Stickers are always free.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="life">
+  <div class="wrap">
+    <div class="kicker">The record</div>
+    <h2>filed under: days we will not forget</h2>
+    <div class="pols">
+      <div class="pol"><img src="assets/photo_walk1.jpg" alt="Walk"><span>morning patrol 🐾</span></div>
+      <div class="pol"><img src="assets/photo_bath.jpg" alt="Bath"><span>the bath incident</span></div>
+      <div class="pol"><img src="assets/photo_birthday.jpg" alt="Birthday"><span>third birthday!!</span></div>
+      <div class="pol"><img src="assets/photo_beach.jpg" alt="Beach"><span>first beach day</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap" id="get">
+  <section class="cta">
+    <h2>bring them in for registration</h2>
+    <p>The clerk is waiting. The ink pad is fresh.</p>
+    <a class="btn btn-ghost" href="https://apps.apple.com/app/id6780046088">Download on the App Store</a>
+  </section>
+</div>
+
+<footer>
+  <img src="assets/icon.png" width="44" style="border-radius:10px; display:block; margin:0 auto 10px;" alt="">
+  Pawport · Bureau of Very Good Dogs<br>
+  <a href="https://pawport.app/privacy">Privacy</a> · <a href="mailto:team@innercircle.so">Contact</a>
+</footer>
+
+<script>
+  // duplicate marquee content for the seamless loop
+  const track = document.getElementById('track');
+  track.innerHTML += track.innerHTML;
+</script>
+</body>
+</html>
