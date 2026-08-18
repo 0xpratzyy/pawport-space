@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "packs": [
+    {
+      "id": "renaissance",
+      "title": "Renaissance Pup",
+      "subtitle": "Oil on canvas. Extremely dignified.",
+      "prompt": "renaissance oil painting portrait of the dog, ornate gold frame, dramatic lighting, museum quality",
+      "accent": "#D89B4A"
+    },
+    {
+      "id": "palace",
+      "title": "Palace Portrait",
+      "subtitle": "Imperial lapdog heritage, restored.",
+      "prompt": "imperial chinese palace portrait of the dog, silk robes, jade ornaments, royal court painting style",
+      "accent": "#2E6B5E"
+    },
+    {
+      "id": "storybook",
+      "title": "Storybook Watercolor",
+      "subtitle": "Soft, warm, suspiciously heroic.",
+      "prompt": "gentle watercolor storybook illustration of the dog, soft pastel palette, children's book style",
+      "accent": "#F2728C"
+    },
+    {
+      "id": "astro",
+      "title": "Space Program",
+      "subtitle": "First fluff on the moon.",
+      "prompt": "retro NASA portrait of the dog as an astronaut, space helmet, 1969 film grain",
+      "accent": "#2B2118"
+    }
+  ]
+}
