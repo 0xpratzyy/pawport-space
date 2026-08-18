@@ -1,0 +1,91 @@
+/* Pawport blog — shares the landing's candy language */
+@font-face { font-family: 'Baloo'; src: url('/assets/Baloo2-ExtraBold.ttf'); font-weight: 800; font-display: swap; }
+@font-face { font-family: 'Baloo'; src: url('/assets/Baloo2-Bold.ttf'); font-weight: 700; font-display: swap; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --ink: #121216; --meta: #6b6b74; --blue: #2F6BFF; --sky: #BFE0FF;
+  --butter: #FFE9AD; --pill: #F2F2F5; --paper: #F7FAFF;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'Baloo', system-ui, sans-serif; color: var(--ink); background: #fff; overflow-x: hidden; }
+.wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.narrow { max-width: 720px; }
+
+/* nav */
+.nav { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; }
+.nav .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); font-weight: 800; font-size: 20px; }
+.nav .logo img { width: 34px; height: 34px; border-radius: 9px; }
+.nav .links { display: flex; align-items: center; gap: 22px; }
+.nav .links a { text-decoration: none; color: var(--meta); font-weight: 700; font-size: 15px; }
+.nav .links a.active { color: var(--ink); }
+.nav .get {
+  background: var(--blue); color: #fff !important; padding: 10px 22px; border-radius: 999px;
+  font-weight: 800; transition: transform .15s ease;
+}
+.nav .get:hover { transform: scale(1.05); }
+
+/* blog hero */
+.bloghero { background: linear-gradient(180deg, #8FC2FF 0%, #D6EAFF 70%, #fff 100%); text-align: center; padding: 46px 0 54px; }
+.bloghero h1 { font-size: clamp(38px, 6vw, 64px); color: #0e2a5e; line-height: 1.02; }
+.bloghero h1 span { color: #fff; text-shadow: 0 3px 0 rgba(20,60,160,.22); }
+.bloghero p { font-weight: 700; color: #2b4a7d; margin-top: 10px; font-size: clamp(15px, 2vw, 19px); }
+
+/* category pills */
+.cats { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin: 26px 0 8px; }
+.cat { background: var(--pill); color: var(--ink); border-radius: 999px; padding: 8px 16px; font-size: 13px; font-weight: 800; text-decoration: none; }
+.cat.on { background: var(--ink); color: #fff; }
+
+/* cards */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 22px; padding: 26px 0 60px; }
+.card {
+  border: 1px solid #ECECF1; border-radius: 22px; overflow: hidden; text-decoration: none; color: var(--ink);
+  background: #fff; transition: transform .18s ease, box-shadow .18s ease; display: flex; flex-direction: column;
+}
+.card:hover { transform: translateY(-4px) rotate(-.4deg); box-shadow: 0 18px 44px rgba(20,60,160,.14); }
+.card img { width: 100%; aspect-ratio: 16/10; object-fit: cover; }
+.card .body { padding: 18px 18px 20px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.card .tagrow { display: flex; gap: 8px; align-items: center; font-size: 12px; font-weight: 800; }
+.card .tag { background: var(--butter); border-radius: 999px; padding: 4px 11px; }
+.card .date { color: var(--meta); font-weight: 700; }
+.card h2 { font-size: 20px; line-height: 1.15; }
+.card p { color: var(--meta); font-weight: 700; font-size: 14px; line-height: 1.45; }
+
+/* article */
+.arthero { background: linear-gradient(180deg, #BFE0FF 0%, #EAF4FF 75%, #fff 100%); padding: 40px 0 34px; }
+.arthero .tagrow { display: flex; gap: 10px; align-items: center; font-size: 13px; font-weight: 800; margin-bottom: 14px; }
+.arthero .tag { background: var(--butter); border-radius: 999px; padding: 5px 13px; }
+.arthero .date { color: #2b4a7d; }
+.arthero h1 { font-size: clamp(32px, 5vw, 52px); color: #0e2a5e; line-height: 1.05; max-width: 780px; }
+.arthero .lede { margin-top: 12px; font-weight: 700; color: #2b4a7d; font-size: clamp(15px, 2vw, 19px); max-width: 700px; }
+article { padding: 36px 0 30px; font-size: 17px; line-height: 1.7; }
+article > * + * { margin-top: 18px; }
+article h2 { font-size: 27px; line-height: 1.15; margin-top: 40px; }
+article h3 { font-size: 20px; margin-top: 28px; }
+article p, article li { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-weight: 400; color: #2b2b31; }
+article strong { font-weight: 700; }
+article ul, article ol { padding-left: 24px; }
+article li + li { margin-top: 8px; }
+article a { color: var(--blue); font-weight: 600; }
+article img { width: 100%; border-radius: 18px; }
+article blockquote { background: var(--paper); border-left: 4px solid var(--sky); border-radius: 0 14px 14px 0; padding: 14px 18px; font-style: italic; }
+article table { width: 100%; border-collapse: collapse; font-family: -apple-system, system-ui, sans-serif; font-size: 15px; }
+article th { text-align: left; background: var(--paper); font-weight: 700; }
+article th, article td { padding: 10px 12px; border-bottom: 1px solid #ECECF1; }
+.note { background: var(--paper); border-radius: 16px; padding: 16px 18px; font-size: 15px; }
+
+/* app CTA card */
+.appcta {
+  display: flex; align-items: center; gap: 18px; background: linear-gradient(120deg, #8FC2FF, #C8E4FF);
+  border-radius: 24px; padding: 22px 24px; margin: 44px 0 10px; text-decoration: none; color: var(--ink);
+}
+.appcta img { width: 64px; height: 64px; border-radius: 15px; box-shadow: 0 10px 24px rgba(20,60,160,.25); }
+.appcta .t { flex: 1; }
+.appcta .t b { display: block; font-size: 20px; color: #0e2a5e; }
+.appcta .t span { font-weight: 700; font-size: 14px; color: #2b4a7d; }
+.appcta .go { background: var(--ink); color: #fff; border-radius: 999px; padding: 12px 24px; font-weight: 800; white-space: nowrap; }
+
+/* related + footer */
+.related { padding: 10px 0 50px; }
+.related h2 { font-size: 24px; margin-bottom: 16px; }
+footer { border-top: 1px solid #ECECF1; padding: 30px 0 44px; text-align: center; color: var(--meta); font-weight: 700; font-size: 14px; }
+footer a { color: var(--meta); text-decoration: none; }
