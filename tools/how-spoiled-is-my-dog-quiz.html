@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How Spoiled Is My Dog? The Official Quiz — Pawport</title>
+<meta name="description" content="Free quiz: how spoiled is your dog, officially? Eight questions about the bed, the birthday parties and the voice you use — with a certified verdict.">
+<link rel="canonical" href="https://pawport.space/tools/how-spoiled-is-my-dog-quiz">
+<meta property="og:title" content="How Spoiled Is My Dog? The Official Quiz">
+<meta property="og:description" content="Eight questions about the bed, the birthday parties and the voice — with a certified verdict.">
+<meta property="og:image" content="https://pawport.space/assets/blog_senior.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/icon.png">
+<link rel="stylesheet" href="/blog/blog.css">
+<link rel="stylesheet" href="/tools/tools.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Quiz","name":"How Spoiled Is My Dog?","url":"https://pawport.space/tools/how-spoiled-is-my-dog-quiz","publisher":{"@type":"Organization","name":"Pawport"}}
+</script>
+</head>
+<body>
+
+<div class="wrap">
+  <nav class="nav">
+    <a class="logo" href="/"><img src="/assets/icon.png" alt="Pawport"> pawport</a>
+    <div class="links">
+      <a href="/">Home</a>
+      <a href="/blog">Blog</a>
+      <a href="/tools" class="active">Tools</a>
+      <a href="/comics">Comics</a>
+      <a class="get" href="https://apps.apple.com/app/id6780046088">Get the app</a>
+    </div>
+  </nav>
+</div>
+
+<header class="arthero">
+  <div class="wrap narrow">
+    <div class="tagrow"><span class="tag">Free quiz · very official</span></div>
+    <h1>How Spoiled Is My Dog? 👑</h1>
+    <p class="lede">The Bureau of Very Good Dogs requires this census. Answer honestly — the dog already knows the truth.</p>
+  </div>
+</header>
+
+<main class="toolwrap">
+  <div class="tool" id="quiz">
+    <div data-q>
+      <label>1. Where does the dog sleep?</label>
+      <select><option value="0">Their own bed, their own room</option><option value="1">Own bed, our room</option><option value="2">Our bed, their corner</option><option value="3">Our bed. We get the corner.</option></select>
+    </div>
+    <div data-q>
+      <label>2. Does the dog have a birthday celebration?</label>
+      <select><option value="0">We forget the date</option><option value="1">Extra treat, a song</option><option value="2">Cake and a hat</option><option value="3">A party with a guest list</option></select>
+    </div>
+    <div data-q>
+      <label>3. The special voice you use with the dog…</label>
+      <select><option value="0">Normal voice, always</option><option value="1">Slightly higher pitch</option><option value="2">A full character</option><option value="3">The dog has a voice WE do — he "talks back"</option></select>
+    </div>
+    <div data-q>
+      <label>4. How many photos of the dog are on your phone?</label>
+      <select><option value="0">A handful</option><option value="1">A few dozen</option><option value="2">Hundreds</option><option value="3">The camera roll IS the dog</option></select>
+    </div>
+    <div data-q>
+      <label>5. Dinner is being cooked. The dog…</label>
+      <select><option value="0">Waits in their spot</option><option value="1">Supervises from the doorway</option><option value="2">Gets a "taster" portion</option><option value="3">Has dietary preferences we accommodate</option></select>
+    </div>
+    <div data-q>
+      <label>6. The dog's wardrobe consists of…</label>
+      <select><option value="0">A collar</option><option value="1">A raincoat, for function</option><option value="2">Seasonal outfits</option><option value="3">More outfits than some humans in this house</option></select>
+    </div>
+    <div data-q>
+      <label>7. When you travel without the dog…</label>
+      <select><option value="0">A neighbour checks in</option><option value="1">Trusted sitter, updates daily</option><option value="2">Video calls with the dog</option><option value="3">We simply don't travel without the dog</option></select>
+    </div>
+    <div data-q>
+      <label>8. The dog did something naughty. You…</label>
+      <select><option value="0">Correct it calmly</option><option value="1">Sigh and fix it</option><option value="2">Take a photo first, then fix it</option><option value="3">Apologize to the dog for the inconvenience</option></select>
+    </div>
+    <button class="toolbtn" onclick="score()">Certify my dog 🐾</button>
+    <div class="result" id="out"></div>
+    <p class="toolnote">Disclaimer from the Bureau: there is no failing grade. Spoiling, when paired with <a href="/blog/how-much-should-i-feed-my-dog">measured portions</a> and <a href="/blog/how-long-should-i-walk-my-dog">real walks</a>, is simply called love with paperwork.</p>
+  </div>
+
+  <a class="appcta" href="https://apps.apple.com/app/id6780046088">
+    <img src="/assets/icon.png" alt="Pawport app icon">
+    <div class="t"><b>Make it official</b><span>A spoiled dog deserves an official passport — every walk, bath and birthday, stamped.</span></div>
+    <span class="go">Get the app</span>
+  </a>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a href="/">pawport.space</a> · <a href="/blog">Blog</a> · <a href="/tools">Tools</a> · <a href="/comics">Comics</a> · <a href="/privacy">Privacy</a> · <a href="mailto:team@innercircle.so">Contact</a>
+  </div>
+</footer>
+
+<script>
+function score() {
+  var qs = document.querySelectorAll('#quiz [data-q] select');
+  var total = 0;
+  qs.forEach(function(s){ total += +s.value; });
+  var out = document.getElementById('out');
+  var v, p;
+  if (total <= 5) { v = "Sensibly Adored 🎖️";
+    p = "Structure AND love — the Bureau notes this is technically ideal, and also suspects you're underreporting the special voice."; }
+  else if (total <= 12) { v = "Comfortably Spoiled 🧸";
+    p = "The dog has staff (you) and knows it. A healthy balance of rules and royal treatment. Certification granted."; }
+  else if (total <= 18) { v = "Thoroughly Pampered 👑";
+    p = "The household schedule bends around the dog. The dog considers this correct. The Bureau concurs."; }
+  else { v = "Supreme Overlord 🏰";
+    p = "This is no longer your house; you are a well-trained live-in cook and chauffeur. The Bureau extends its congratulations — to the dog."; }
+  out.className = 'result on';
+  out.innerHTML = '<span class="big">' + v + '</span><div class="sub">spoil score: ' + total + ' / 24 — screenshot this, the group chat needs it</div><p>' + p + '</p>';
+}
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>

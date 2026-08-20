@@ -1,0 +1,22 @@
+/* One-panel dog truths — big candy cards built for screenshots */
+.comicwrap { max-width: 620px; margin: 0 auto; padding: 0 24px; }
+.panel {
+  background: #fff; border: 1px solid #ECECF1; border-radius: 28px; overflow: hidden;
+  margin-top: -26px; position: relative; box-shadow: 0 22px 54px rgba(20,60,160,.12);
+}
+.panel img { width: 100%; aspect-ratio: 3/2; object-fit: cover; }
+.panel .txt { padding: 24px 26px 28px; }
+.panel .kicker { font-size: 11px; font-weight: 800; letter-spacing: 2px; color: var(--meta); text-transform: uppercase; }
+.panel .myth { font-size: 21px; font-weight: 800; color: var(--meta); text-decoration: line-through; text-decoration-color: #E4574C; text-decoration-thickness: 3px; margin-top: 10px; line-height: 1.2; }
+.panel .truth { font-size: 30px; font-weight: 800; color: var(--ink); line-height: 1.12; margin-top: 10px; }
+.panel .truth em { font-style: normal; color: var(--blue); }
+.comicbody { padding: 30px 0 6px; font-size: 16.5px; line-height: 1.65; }
+.comicbody p { font-family: -apple-system, system-ui, sans-serif; color: #2b2b31; margin-top: 14px; }
+.comicbody a { color: var(--blue); font-weight: 600; }
+.comicgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; padding: 26px 0 50px; }
+.comiccard { border: 1px solid #ECECF1; border-radius: 22px; overflow: hidden; text-decoration: none; color: var(--ink); background: #fff; transition: transform .18s ease, box-shadow .18s ease; }
+.comiccard:hover { transform: translateY(-4px) rotate(-.4deg); box-shadow: 0 18px 44px rgba(20,60,160,.14); }
+.comiccard img { width: 100%; aspect-ratio: 16/10; object-fit: cover; }
+.comiccard .b { padding: 15px 17px 18px; }
+.comiccard .k { font-size: 10px; font-weight: 800; letter-spacing: 1.6px; color: var(--meta); text-transform: uppercase; }
+.comiccard h2 { font-size: 18px; line-height: 1.18; margin-top: 6px; }
