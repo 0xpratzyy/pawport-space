@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dog Food Calculator: Daily Calories & Cups — Pawport</title>
+<meta name="description" content="Free dog food calculator — daily calories and cups by weight, age and activity level, using the veterinary RER formula, plus your treat budget.">
+<link rel="canonical" href="https://pawport.space/tools/dog-food-calculator">
+<meta property="og:title" content="Dog Food Calculator: Daily Calories & Cups">
+<meta property="og:description" content="Daily calories and cups by weight, age and activity — using the veterinary RER formula.">
+<meta property="og:image" content="https://pawport.space/assets/blog_feeding.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/icon.png">
+<link rel="stylesheet" href="/blog/blog.css">
+<link rel="stylesheet" href="/tools/tools.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Dog Food Calculator","url":"https://pawport.space/tools/dog-food-calculator","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Pawport"}}
+</script>
+</head>
+<body>
+
+<div class="wrap">
+  <nav class="nav">
+    <a class="logo" href="/"><img src="/assets/icon.png" alt="Pawport"> pawport</a>
+    <div class="links">
+      <a href="/">Home</a>
+      <a href="/blog">Blog</a>
+      <a href="/tools" class="active">Tools</a>
+      <a class="get" href="https://apps.apple.com/app/id6780046088">Get the app</a>
+    </div>
+  </nav>
+</div>
+
+<header class="arthero">
+  <div class="wrap narrow">
+    <div class="tagrow"><span class="tag">Free tool</span></div>
+    <h1>Dog Food Calculator 🥣</h1>
+    <p class="lede">The veterinary RER formula, not the food bag's generous chart. Calories, cups and the treat budget nobody counts.</p>
+  </div>
+</header>
+
+<main class="toolwrap">
+  <div class="tool">
+    <label for="weight">Dog's weight (kg)</label>
+    <input type="number" id="weight" min="1" max="90" value="8" step="0.5" inputmode="decimal">
+    <label for="life">Life stage & activity</label>
+    <select id="life">
+      <option value="3.0">Puppy under 4 months</option>
+      <option value="2.0">Puppy 4–12 months</option>
+      <option value="1.6" selected>Adult, neutered, normal activity</option>
+      <option value="1.8">Adult, intact, normal activity</option>
+      <option value="2.0">Adult, very active / working</option>
+      <option value="1.4">Senior or low activity</option>
+      <option value="1.0">Weight-loss plan (vet supervised)</option>
+    </select>
+    <label for="kcal">Food's calories per cup (from the bag — default is typical dry food)</label>
+    <input type="number" id="kcal" min="150" max="700" value="380" inputmode="numeric">
+    <button class="toolbtn" onclick="calc()">Calculate 🐾</button>
+    <div class="result" id="out"></div>
+    <p class="toolnote">Formula: RER = 70 × kg<sup>0.75</sup>, multiplied by life stage. Weigh the food, do the weekly rib check, and adjust to the dog in front of you — the full logic is in the <a href="/blog/how-much-should-i-feed-my-dog">feeding guide</a>.</p>
+  </div>
+
+  <a class="appcta" href="https://apps.apple.com/app/id6780046088">
+    <img src="/assets/icon.png" alt="Pawport app icon">
+    <div class="t"><b>Watch the weight curve</b><span>Monthly weigh-ins in Pawport's health drawer show the trend before the vet does.</span></div>
+    <span class="go">Get the app</span>
+  </a>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a href="/">pawport.space</a> · <a href="/blog">Blog</a> · <a href="/tools">Tools</a> · <a href="/privacy">Privacy</a> · <a href="mailto:team@innercircle.so">Contact</a>
+  </div>
+</footer>
+
+<script>
+function calc() {
+  var kg = Math.max(0.5, +document.getElementById('weight').value || 0);
+  var mult = +document.getElementById('life').value;
+  var perCup = Math.max(100, +document.getElementById('kcal').value || 380);
+  var rer = 70 * Math.pow(kg, 0.75);
+  var daily = Math.round(rer * mult);
+  var cups = daily / perCup;
+  var cupsTxt = (Math.round(cups * 4) / 4).toFixed(2).replace(/\.?0+$/, '');
+  var treats = Math.round(daily * 0.10);
+  var out = document.getElementById('out');
+  out.className = 'result on';
+  out.innerHTML = '<span class="big">' + daily + ' kcal/day</span>' +
+    '<div class="sub">≈ ' + cupsTxt + ' cups of this food, split over 2 meals</div>' +
+    '<p>Treat budget: <strong>max ' + treats + ' kcal/day</strong> (the 10% rule) — one dental chew can eat most of that. Weigh portions with a kitchen scale; eyeballed cups drift ~25% upward.</p>';
+}
+calc();
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>

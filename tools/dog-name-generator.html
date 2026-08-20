@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dog Name Generator: Cute, Classic & Foodie Names — Pawport</title>
+<meta name="description" content="Free dog name generator — cute, classic, foodie, mythic, nature and dapper names, eight at a time until one makes everyone say 'that's it'.">
+<link rel="canonical" href="https://pawport.space/tools/dog-name-generator">
+<meta property="og:title" content="Dog Name Generator: Cute, Classic & Foodie Names">
+<meta property="og:description" content="Cute, classic, foodie, mythic — eight name ideas at a time until one sticks.">
+<meta property="og:image" content="https://pawport.space/assets/blog_checklist.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/icon.png">
+<link rel="stylesheet" href="/blog/blog.css">
+<link rel="stylesheet" href="/tools/tools.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Dog Name Generator","url":"https://pawport.space/tools/dog-name-generator","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Pawport"}}
+</script>
+</head>
+<body>
+
+<div class="wrap">
+  <nav class="nav">
+    <a class="logo" href="/"><img src="/assets/icon.png" alt="Pawport"> pawport</a>
+    <div class="links">
+      <a href="/">Home</a>
+      <a href="/blog">Blog</a>
+      <a href="/tools" class="active">Tools</a>
+      <a class="get" href="https://apps.apple.com/app/id6780046088">Get the app</a>
+    </div>
+  </nav>
+</div>
+
+<header class="arthero">
+  <div class="wrap narrow">
+    <div class="tagrow"><span class="tag">Free tool</span></div>
+    <h1>Dog Name Generator 🏷️</h1>
+    <p class="lede">The name has to survive being yelled across a park. Pick a vibe, roll until something makes the whole family nod.</p>
+  </div>
+</header>
+
+<main class="toolwrap">
+  <div class="tool">
+    <label for="vibe">The vibe</label>
+    <select id="vibe">
+      <option value="cute">Cute & soft</option>
+      <option value="classic">Classic & timeless</option>
+      <option value="foodie">Foodie</option>
+      <option value="mythic">Mythic & mighty</option>
+      <option value="nature">Nature & outdoors</option>
+      <option value="dapper">Dapper & distinguished</option>
+    </select>
+    <button class="toolbtn" onclick="roll()">Give me names 🎲</button>
+    <div class="result on" id="out" style="display:block"><div class="namechips" id="chips"></div></div>
+    <p class="toolnote">Naming tip: two syllables ending in a vowel sound carry best ("Chiyo!", "Biscuit!"), and avoid names that rhyme with commands — "Beau" and "no" is a lifetime of confusion.</p>
+  </div>
+
+  <a class="appcta" href="https://apps.apple.com/app/id6780046088">
+    <img src="/assets/icon.png" alt="Pawport app icon">
+    <div class="t"><b>Found the one?</b><span>Give that name an official passport — gotcha day is the first stamp.</span></div>
+    <span class="go">Get the app</span>
+  </a>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a href="/">pawport.space</a> · <a href="/blog">Blog</a> · <a href="/tools">Tools</a> · <a href="/privacy">Privacy</a> · <a href="mailto:team@innercircle.so">Contact</a>
+  </div>
+</footer>
+
+<script>
+var POOLS = {
+  cute: ["Mochi","Biscuit","Noodle","Pudding","Waffles","Bubbles","Peanut","Clover","Pippin","Dumpling","Tofu","Marshmallow","Sprout","Munchkin","Pebbles","Snuggles","Puff","Boba","Cupcake","Wiggles","Chiyo","Momo","Bao","Poppy","Sunny","Doodle","Button","Beanie","Toffee","Squish"],
+  classic: ["Max","Bella","Charlie","Lucy","Cooper","Daisy","Buddy","Molly","Rocky","Sadie","Duke","Ruby","Bear","Rosie","Toby","Ginger","Jack","Penny","Sam","Maggie","Oscar","Lady","Rex","Annie","Winston","Hazel","Bruno","Stella","Leo","Coco"],
+  foodie: ["Nacho","Pretzel","Olive","Pickles","Mango","Kimchi","Wasabi","Churro","Butters","Pepper","Basil","Cinnamon","Nugget","Taco","Sushi","Latte","Espresso","Honey","Ramen","Gnocchi","Samosa","Jalebi","Laddu","Pao","Brioche","Cheddar","Miso","Truffle","Pesto","Chai"],
+  mythic: ["Thor","Athena","Loki","Freya","Zeus","Luna","Odin","Nova","Apollo","Artemis","Titan","Phoenix","Atlas","Juno","Ajax","Vesta","Hercules","Nyx","Orion","Selene","Draco","Indra","Arya","Rudra","Kai","Valkyrie","Griffin","Echo","Onyx","Storm"],
+  nature: ["River","Willow","Aspen","Ivy","Cedar","Meadow","Storm","Fern","Rocky","Juniper","Forrest","Sage","Canyon","Maple","Flint","Dahlia","Birch","Wren","Moss","Tulip","Cliff","Petal","Bramble","Sierra","Pebble","Rain","Sequoia","Clove","Dune","Marigold"],
+  dapper: ["Winston","Beatrix","Reginald","Penelope","Alfred","Genevieve","Bartholomew","Cordelia","Percival","Josephine","Montgomery","Arabella","Sebastian","Wilhelmina","Archibald","Octavia","Benedict","Prudence","Fitzgerald","Clementine","Humphrey","Vivienne","Leopold","Henrietta","Chester","Rosalind","Digby","Margot","Sterling","Beau"]
+};
+function roll() {
+  var pool = POOLS[document.getElementById('vibe').value].slice();
+  var chips = document.getElementById('chips');
+  chips.innerHTML = '';
+  for (var i = 0; i < 8 && pool.length; i++) {
+    var idx = Math.floor(Math.random() * pool.length);
+    var name = pool.splice(idx, 1)[0];
+    var el = document.createElement('span');
+    el.className = 'namechip';
+    el.textContent = name;
+    chips.appendChild(el);
+  }
+}
+roll();
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Is It Too Hot to Walk My Dog? Heat Safety Checker — Pawport</title>
+<meta name="description" content="Free heat safety checker — enter the temperature and your dog's build to get a walk verdict, with the 7-second pavement test and heatstroke signs.">
+<link rel="canonical" href="https://pawport.space/tools/dog-heat-check">
+<meta property="og:title" content="Is It Too Hot to Walk My Dog? Heat Safety Checker">
+<meta property="og:description" content="Enter the temperature and your dog's build — get a walk verdict with the 7-second pavement test.">
+<meta property="og:image" content="https://pawport.space/assets/blog_heat.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/icon.png">
+<link rel="stylesheet" href="/blog/blog.css">
+<link rel="stylesheet" href="/tools/tools.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Dog Walk Heat Safety Checker","url":"https://pawport.space/tools/dog-heat-check","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Pawport"}}
+</script>
+</head>
+<body>
+
+<div class="wrap">
+  <nav class="nav">
+    <a class="logo" href="/"><img src="/assets/icon.png" alt="Pawport"> pawport</a>
+    <div class="links">
+      <a href="/">Home</a>
+      <a href="/blog">Blog</a>
+      <a href="/tools" class="active">Tools</a>
+      <a class="get" href="https://apps.apple.com/app/id6780046088">Get the app</a>
+    </div>
+  </nav>
+</div>
+
+<header class="arthero">
+  <div class="wrap narrow">
+    <div class="tagrow"><span class="tag">Free tool</span></div>
+    <h1>Walk Heat Safety Checker ☀️</h1>
+    <p class="lede">Air that feels fine to you can be dangerous to a fur coat with no sweat glands. Check before you clip the leash.</p>
+  </div>
+</header>
+
+<main class="toolwrap">
+  <div class="tool">
+    <div class="row">
+      <div>
+        <label for="temp">Temperature</label>
+        <input type="number" id="temp" min="-10" max="55" value="28" inputmode="numeric">
+      </div>
+      <div>
+        <label for="unit">Unit</label>
+        <select id="unit"><option value="c">°C</option><option value="f">°F</option></select>
+      </div>
+    </div>
+    <label for="build">Your dog</label>
+    <select id="build">
+      <option value="normal">Typical adult dog</option>
+      <option value="risk">Flat-faced (shih tzu, pug, bulldog…), senior, puppy or heavy coat</option>
+    </select>
+    <button class="toolbtn" onclick="calc()">Check 🐾</button>
+    <div class="result" id="out"></div>
+    <p class="toolnote">Humidity and full sun push every verdict one level worse. Always do the <strong>7-second pavement test</strong>: back of your hand flat on the asphalt — if you can't hold 7 seconds, it burns paws. Full guide: <a href="/blog/walking-your-dog-in-hot-weather">walking in hot weather</a>.</p>
+  </div>
+
+  <a class="appcta" href="https://apps.apple.com/app/id6780046088">
+    <img src="/assets/icon.png" alt="Pawport app icon">
+    <div class="t"><b>Walks with weather built in</b><span>Pawport stamps every patrol with route and weather — flat-faced heat thresholds included.</span></div>
+    <span class="go">Get the app</span>
+  </a>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a href="/">pawport.space</a> · <a href="/blog">Blog</a> · <a href="/tools">Tools</a> · <a href="/privacy">Privacy</a> · <a href="mailto:team@innercircle.so">Contact</a>
+  </div>
+</footer>
+
+<script>
+function calc() {
+  var t = +document.getElementById('temp').value || 0;
+  if (document.getElementById('unit').value === 'f') { t = (t - 32) * 5 / 9; }
+  var risky = document.getElementById('build').value === 'risk';
+  var v, cls, tip;
+  if (t < 20) { v = "Walk freely 🎉"; cls = "verdict-ok"; tip = "Perfect walking weather. Go collect some stamps."; }
+  else if (t < 24) { v = risky ? "Moderate — watch the pant 👀" : "All good ✅"; cls = "verdict-ok";
+    tip = risky ? "Fine for most outings — keep it moderate, bring water, watch for heavy panting." : "Bring water on longer walks; otherwise enjoy."; }
+  else if (t < 28) { v = risky ? "Short sniff-walks only ⚠️" : "Shorter & shadier ⚠️"; cls = "verdict-warn";
+    tip = risky ? "Early morning or late evening, shade and grass, short duration. Flat faces cool poorly." : "Cut the distance, pick shade and grass, carry water. Do the pavement test."; }
+  else if (t < 32) { v = risky ? "Bathroom breaks only 🛑" : "Early morning / late evening only 🛑"; cls = "verdict-bad";
+    tip = risky ? "This is genuinely dangerous territory for flat-faced, senior and heavy-coated dogs. Out, business, back in." : "Skip the midday entirely — dawn or after sunset only, shade route, water along."; }
+  else { v = "Skip the walk 🚫"; cls = "verdict-bad";
+    tip = "Too hot for any dog. Indoor games burn the energy with zero risk — sniff mats, puzzles, hallway recalls. The walk will be there at dawn."; }
+  var out = document.getElementById('out');
+  out.className = 'result on';
+  out.innerHTML = '<span class="big ' + cls + '">' + v + '</span>' +
+    '<div class="sub">at ' + Math.round(t) + '°C for this dog</div><p>' + tip + '</p>' +
+    '<p><strong>Heatstroke signs:</strong> relentless panting, thick drool, bright-red tongue, wobbling, collapse — shade, room-temp water over the body, vet immediately.</p>';
+}
+calc();
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>

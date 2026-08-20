@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dog Water Intake Calculator: Daily Needs — Pawport</title>
+<meta name="description" content="Free dog water intake calculator — how much your dog should drink daily by weight, what changes it, and the dehydration signs to know.">
+<link rel="canonical" href="https://pawport.space/tools/dog-water-calculator">
+<meta property="og:title" content="Dog Water Intake Calculator: Daily Needs">
+<meta property="og:description" content="How much your dog should drink daily by weight — and the dehydration signs to know.">
+<meta property="og:image" content="https://pawport.space/assets/blog_bath.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/icon.png">
+<link rel="stylesheet" href="/blog/blog.css">
+<link rel="stylesheet" href="/tools/tools.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Dog Water Intake Calculator","url":"https://pawport.space/tools/dog-water-calculator","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Pawport"}}
+</script>
+</head>
+<body>
+
+<div class="wrap">
+  <nav class="nav">
+    <a class="logo" href="/"><img src="/assets/icon.png" alt="Pawport"> pawport</a>
+    <div class="links">
+      <a href="/">Home</a>
+      <a href="/blog">Blog</a>
+      <a href="/tools" class="active">Tools</a>
+      <a class="get" href="https://apps.apple.com/app/id6780046088">Get the app</a>
+    </div>
+  </nav>
+</div>
+
+<header class="arthero">
+  <div class="wrap narrow">
+    <div class="tagrow"><span class="tag">Free tool</span></div>
+    <h1>Water Intake Calculator 💧</h1>
+    <p class="lede">Roughly 50–60 ml per kilo per day — but heat, exercise and dry food all move the number. Here's your dog's range.</p>
+  </div>
+</header>
+
+<main class="toolwrap">
+  <div class="tool">
+    <label for="weight">Dog's weight (kg)</label>
+    <input type="number" id="weight" min="1" max="90" value="8" step="0.5" inputmode="decimal">
+    <label for="food">Diet</label>
+    <select id="food">
+      <option value="dry">Mostly dry food (kibble)</option>
+      <option value="mixed">Mixed wet + dry</option>
+      <option value="wet">Mostly wet / fresh food</option>
+    </select>
+    <button class="toolbtn" onclick="calc()">Calculate 🐾</button>
+    <div class="result" id="out"></div>
+    <p class="toolnote">Hot days and <a href="/blog/walking-your-dog-in-hot-weather">long walks</a> raise needs sharply — offer water every 15–20 minutes on warm outings. Wet food carries ~70% water, so those dogs visibly drink less. That's normal.</p>
+  </div>
+
+  <a class="appcta" href="https://apps.apple.com/app/id6780046088">
+    <img src="/assets/icon.png" alt="Pawport app icon">
+    <div class="t"><b>Health, all in one drawer</b><span>Weights, vet visits and the daily routine — Pawport keeps the whole record exportable.</span></div>
+    <span class="go">Get the app</span>
+  </a>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a href="/">pawport.space</a> · <a href="/blog">Blog</a> · <a href="/tools">Tools</a> · <a href="/privacy">Privacy</a> · <a href="mailto:team@innercircle.so">Contact</a>
+  </div>
+</footer>
+
+<script>
+function calc() {
+  var kg = Math.max(0.5, +document.getElementById('weight').value || 0);
+  var diet = document.getElementById('food').value;
+  var lo = Math.round(kg * 50), hi = Math.round(kg * 60);
+  if (diet === 'wet') { lo = Math.round(lo * 0.6); hi = Math.round(hi * 0.7); }
+  if (diet === 'mixed') { lo = Math.round(lo * 0.8); hi = Math.round(hi * 0.85); }
+  var cups = (hi / 250).toFixed(1);
+  var out = document.getElementById('out');
+  out.className = 'result on';
+  out.innerHTML = '<span class="big">' + lo + '–' + hi + ' ml/day</span>' +
+    '<div class="sub">≈ up to ' + cups + ' cups from the bowl' + (diet === 'wet' ? ' (the food carries the rest)' : '') + '</div>' +
+    '<p><strong>Dehydration check:</strong> gently pinch the skin between the shoulders — it should snap back instantly. Slow return, dry gums or sticky saliva = offer water and, if it persists, call the vet. Drinking dramatically <em>more</em> than this range for days is also worth a vet chat.</p>';
+}
+calc();
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
