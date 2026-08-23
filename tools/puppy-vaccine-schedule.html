@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Puppy Vaccine Schedule Generator (With Dates) — Pawport</title>
-<meta name="description" content="Enter your puppy's birth date and get the full vaccination schedule with actual due dates — DHPP, rabies, lepto and boosters, ready to save.">
+<title>Puppy Vaccine Schedule Generator (With Dates) | Pawport</title>
+<meta name="description" content="Enter your puppy's birth date and get the full vaccination schedule with actual due dates, DHPP, rabies, lepto and boosters, ready to save.">
 <link rel="canonical" href="https://pawport.space/tools/puppy-vaccine-schedule">
 <meta property="og:title" content="Puppy Vaccine Schedule Generator (With Dates)">
-<meta property="og:description" content="Enter the birth date, get every shot with its actual due date — DHPP, rabies, lepto and boosters.">
+<meta property="og:description" content="Enter the birth date, get every shot with its actual due date, DHPP, rabies, lepto and boosters.">
 <meta property="og:image" content="https://pawport.space/assets/blog_vaccines.jpg">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
@@ -37,7 +37,7 @@
   <div class="wrap narrow">
     <div class="tagrow"><span class="tag">Free tool</span></div>
     <h1>Puppy Vaccine Schedule 💉</h1>
-    <p class="lede">Enter the birth date; get every shot with its actual calendar date. Screenshot it, fridge it, or better — set reminders.</p>
+    <p class="lede">Enter the birth date; get every shot with its actual calendar date. Screenshot it, fridge it, or better, set reminders.</p>
   </div>
 </header>
 
@@ -47,12 +47,12 @@
     <input type="date" id="dob">
     <button class="toolbtn" onclick="calc()">Generate schedule 🐾</button>
     <div class="result" id="out"></div>
-    <p class="toolnote">Standard core schedule (DHPP series, leptospirosis, rabies). Every clinic fine-tunes by region and risk — your vet's plan wins. Dates carry a ±1 week window. Full details in the <a href="/blog/puppy-vaccination-schedule">vaccination guide</a>.</p>
+    <p class="toolnote">Standard core schedule (DHPP series, leptospirosis, rabies). Every clinic fine-tunes by region and risk, your vet's plan wins. Dates carry a ±1 week window. Full details in the <a href="/blog/puppy-vaccination-schedule">vaccination guide</a>.</p>
   </div>
 
   <a class="appcta" href="https://apps.apple.com/app/id6780046088">
     <img src="/assets/icon.png" alt="Pawport app icon">
-    <div class="t"><b>Never miss a booster</b><span>Pawport's health drawer keeps vaccines with due-date reminders — and the whole record exports for the vet.</span></div>
+    <div class="t"><b>Never miss a booster</b><span>Pawport's health drawer keeps vaccines with due-date reminders, and the whole record exports for the vet.</span></div>
     <span class="go">Get the app</span>
   </a>
 </main>
@@ -74,9 +74,9 @@ function calc() {
     return d.toLocaleDateString(undefined, {day: 'numeric', month: 'short', year: 'numeric'});
   }
   var rows = [
-    [add(6),  'DHPP #1', 'Distemper, hepatitis, parvo, parainfluenza — round one'],
+    [add(6),  'DHPP #1', 'Distemper, hepatitis, parvo, parainfluenza, round one'],
     [add(10), 'DHPP #2 + Lepto #1', 'Second round, plus leptospirosis'],
-    [add(14), 'DHPP #3 + Lepto #2 + Rabies', 'Final puppy round — rabies timing varies by law'],
+    [add(14), 'DHPP #3 + Lepto #2 + Rabies', 'Final puppy round, rabies timing varies by law'],
     [add(52), 'One-year boosters', 'DHPP + rabies + lepto refresh'],
     ['Yearly / 3-yearly', 'Adult boosters', 'Lepto yearly; DHPP & rabies per your vet and local law']
   ];
@@ -84,7 +84,7 @@ function calc() {
   for (var i = 0; i < rows.length; i++) {
     html += '<tr><td><strong>' + rows[i][0] + '</strong></td><td>' + rows[i][1] + '</td><td>' + rows[i][2] + '</td></tr>';
   }
-  html += '</table><p style="margin-top:12px">Until ~1 week after DHPP #3: no public grass or unknown dogs — but do carry-socialize! See <a href="/blog/how-to-socialize-a-puppy">why weeks 8–14 matter</a>.</p>';
+  html += '</table><p style="margin-top:12px">Until ~1 week after DHPP #3: no public grass or unknown dogs, but do carry-socialize! See <a href="/blog/how-to-socialize-a-puppy">why weeks 8–14 matter</a>.</p>';
   out.className = 'result on';
   out.innerHTML = html;
 }

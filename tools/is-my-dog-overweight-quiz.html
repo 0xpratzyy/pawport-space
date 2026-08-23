@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Is My Dog Overweight? Take the 6-Question Quiz — Pawport</title>
-<meta name="description" content="Free quiz: is my dog overweight? Six vet-style body condition questions — ribs, waist, tuck, energy — with an honest verdict and what to do next.">
+<title>Is My Dog Overweight? Take the 6-Question Quiz | Pawport</title>
+<meta name="description" content="Free quiz: is my dog overweight? Six vet-style body condition questions, ribs, waist, tuck, energy, with an honest verdict and what to do next.">
 <link rel="canonical" href="https://pawport.space/tools/is-my-dog-overweight-quiz">
 <meta property="og:title" content="Is My Dog Overweight? Take the 6-Question Quiz">
 <meta property="og:description" content="Six vet-style body condition questions with an honest verdict.">
@@ -37,7 +37,7 @@
   <div class="wrap narrow">
     <div class="tagrow"><span class="tag">Free quiz</span></div>
     <h1>Is My Dog Overweight? 🐕</h1>
-    <p class="lede">Over half of pet dogs are overweight — and almost none of their humans think so. Six honest questions, hands on the dog.</p>
+    <p class="lede">Over half of pet dogs are overweight, and almost none of their humans think so. Six honest questions, hands on the dog.</p>
   </div>
 </header>
 
@@ -45,7 +45,7 @@
   <div class="tool" id="quiz">
     <div data-q>
       <label>1. Run flat fingers along the ribcage. Can you feel ribs easily under a thin layer?</label>
-      <select><option value="0">Yes — like the back of my hand</option><option value="1">I have to press a bit</option><option value="2">I genuinely can't find ribs</option></select>
+      <select><option value="0">Yes, like the back of my hand</option><option value="1">I have to press a bit</option><option value="2">I genuinely can't find ribs</option></select>
     </div>
     <div data-q>
       <label>2. Looking from above, is there a visible waist behind the ribs?</label>
@@ -65,11 +65,11 @@
     </div>
     <div data-q>
       <label>6. Daily treats, chews and table scraps are…</label>
-      <select><option value="0">Rare and counted</option><option value="1">A few, uncounted</option><option value="2">Constant — everyone in the house gives some</option></select>
+      <select><option value="0">Rare and counted</option><option value="1">A few, uncounted</option><option value="2">Constant, everyone in the house gives some</option></select>
     </div>
     <button class="toolbtn" onclick="score()">Get the verdict 🐾</button>
     <div class="result" id="out"></div>
-    <p class="toolnote">This mirrors the vet's body-condition check, but it isn't a diagnosis — breed shapes differ (a whippet and a bulldog carry weight very differently). The fix lives in the <a href="/blog/how-much-should-i-feed-my-dog">feeding guide</a> and the <a href="/tools/dog-food-calculator">food calculator</a>.</p>
+    <p class="toolnote">This mirrors the vet's body-condition check, but it isn't a diagnosis, breed shapes differ (a whippet and a bulldog carry weight very differently). The fix lives in the <a href="/blog/how-much-should-i-feed-my-dog">feeding guide</a> and the <a href="/tools/dog-food-calculator">food calculator</a>.</p>
   </div>
 
   <a class="appcta" href="https://apps.apple.com/app/id6780046088">
@@ -93,13 +93,13 @@ function score() {
   var out = document.getElementById('out');
   var v, cls, p;
   if (total <= 2) { v = "Looking lean & good ✅"; cls = "verdict-ok";
-    p = "Body condition sounds right where vets like it. Keep weighing the food and doing this check monthly — staying lean is the single biggest lifespan lever we control."; }
-  else if (total <= 5) { v = "Borderline — worth tightening up ⚠️"; cls = "verdict-warn";
+    p = "Body condition sounds right where vets like it. Keep weighing the food and doing this check monthly, staying lean is the single biggest lifespan lever we control."; }
+  else if (total <= 5) { v = "Borderline, worth tightening up ⚠️"; cls = "verdict-warn";
     p = "A few soft signals. Start weighing the food, apply the 10% treat rule, and re-take this quiz in three weeks. A 10% portion cut is usually all a borderline dog needs."; }
   else if (total <= 8) { v = "Likely overweight 🛑"; cls = "verdict-bad";
     p = "Multiple signs point the same way. Weigh the food, cut portions ~10%, swap biscuit treats for carrot bits, and bring it up at the next vet visit for a proper body-condition score."; }
   else { v = "Time for a vet conversation 🩺"; cls = "verdict-bad";
-    p = "This pattern deserves professional eyes — both to confirm the weight and to rule out medical causes. The good news: dogs lose weight brilliantly once the humans agree on a plan."; }
+    p = "This pattern deserves professional eyes, both to confirm the weight and to rule out medical causes. The good news: dogs lose weight brilliantly once the humans agree on a plan."; }
   out.className = 'result on';
   out.innerHTML = '<span class="big ' + cls + '">' + v + '</span><div class="sub">score: ' + total + ' / 12</div><p>' + p + '</p>';
 }

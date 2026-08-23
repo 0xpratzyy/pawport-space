@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Is It Too Hot to Walk My Dog? Heat Safety Checker — Pawport</title>
-<meta name="description" content="Free heat safety checker — enter the temperature and your dog's build to get a walk verdict, with the 7-second pavement test and heatstroke signs.">
+<title>Is It Too Hot to Walk My Dog? Heat Safety Checker | Pawport</title>
+<meta name="description" content="Free heat safety checker, enter the temperature and your dog's build to get a walk verdict, with the 7-second pavement test and heatstroke signs.">
 <link rel="canonical" href="https://pawport.space/tools/dog-heat-check">
 <meta property="og:title" content="Is It Too Hot to Walk My Dog? Heat Safety Checker">
-<meta property="og:description" content="Enter the temperature and your dog's build — get a walk verdict with the 7-second pavement test.">
+<meta property="og:description" content="Enter the temperature and your dog's build, get a walk verdict with the 7-second pavement test.">
 <meta property="og:image" content="https://pawport.space/assets/blog_heat.jpg">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
@@ -60,12 +60,12 @@
     </select>
     <button class="toolbtn" onclick="calc()">Check 🐾</button>
     <div class="result" id="out"></div>
-    <p class="toolnote">Humidity and full sun push every verdict one level worse. Always do the <strong>7-second pavement test</strong>: back of your hand flat on the asphalt — if you can't hold 7 seconds, it burns paws. Full guide: <a href="/blog/walking-your-dog-in-hot-weather">walking in hot weather</a>.</p>
+    <p class="toolnote">Humidity and full sun push every verdict one level worse. Always do the <strong>7-second pavement test</strong>: back of your hand flat on the asphalt, if you can't hold 7 seconds, it burns paws. Full guide: <a href="/blog/walking-your-dog-in-hot-weather">walking in hot weather</a>.</p>
   </div>
 
   <a class="appcta" href="https://apps.apple.com/app/id6780046088">
     <img src="/assets/icon.png" alt="Pawport app icon">
-    <div class="t"><b>Walks with weather built in</b><span>Pawport stamps every patrol with route and weather — flat-faced heat thresholds included.</span></div>
+    <div class="t"><b>Walks with weather built in</b><span>Pawport stamps every patrol with route and weather, flat-faced heat thresholds included.</span></div>
     <span class="go">Get the app</span>
   </a>
 </main>
@@ -83,19 +83,19 @@ function calc() {
   var risky = document.getElementById('build').value === 'risk';
   var v, cls, tip;
   if (t < 20) { v = "Walk freely 🎉"; cls = "verdict-ok"; tip = "Perfect walking weather. Go collect some stamps."; }
-  else if (t < 24) { v = risky ? "Moderate — watch the pant 👀" : "All good ✅"; cls = "verdict-ok";
-    tip = risky ? "Fine for most outings — keep it moderate, bring water, watch for heavy panting." : "Bring water on longer walks; otherwise enjoy."; }
+  else if (t < 24) { v = risky ? "Moderate, watch the pant 👀" : "All good ✅"; cls = "verdict-ok";
+    tip = risky ? "Fine for most outings, keep it moderate, bring water, watch for heavy panting." : "Bring water on longer walks; otherwise enjoy."; }
   else if (t < 28) { v = risky ? "Short sniff-walks only ⚠️" : "Shorter & shadier ⚠️"; cls = "verdict-warn";
     tip = risky ? "Early morning or late evening, shade and grass, short duration. Flat faces cool poorly." : "Cut the distance, pick shade and grass, carry water. Do the pavement test."; }
   else if (t < 32) { v = risky ? "Bathroom breaks only 🛑" : "Early morning / late evening only 🛑"; cls = "verdict-bad";
-    tip = risky ? "This is genuinely dangerous territory for flat-faced, senior and heavy-coated dogs. Out, business, back in." : "Skip the midday entirely — dawn or after sunset only, shade route, water along."; }
+    tip = risky ? "This is genuinely dangerous territory for flat-faced, senior and heavy-coated dogs. Out, business, back in." : "Skip the midday entirely, dawn or after sunset only, shade route, water along."; }
   else { v = "Skip the walk 🚫"; cls = "verdict-bad";
-    tip = "Too hot for any dog. Indoor games burn the energy with zero risk — sniff mats, puzzles, hallway recalls. The walk will be there at dawn."; }
+    tip = "Too hot for any dog. Indoor games burn the energy with zero risk, sniff mats, puzzles, hallway recalls. The walk will be there at dawn."; }
   var out = document.getElementById('out');
   out.className = 'result on';
   out.innerHTML = '<span class="big ' + cls + '">' + v + '</span>' +
     '<div class="sub">at ' + Math.round(t) + '°C for this dog</div><p>' + tip + '</p>' +
-    '<p><strong>Heatstroke signs:</strong> relentless panting, thick drool, bright-red tongue, wobbling, collapse — shade, room-temp water over the body, vet immediately.</p>';
+    '<p><strong>Heatstroke signs:</strong> relentless panting, thick drool, bright-red tongue, wobbling, collapse, shade, room-temp water over the body, vet immediately.</p>';
 }
 calc();
 </script>

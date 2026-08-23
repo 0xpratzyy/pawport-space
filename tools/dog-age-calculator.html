@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dog Age Calculator: Dog Years to Human Years — Pawport</title>
-<meta name="description" content="Free dog age calculator — convert dog years to human years by size, the accurate way (not the 7× myth), plus your dog's current life stage.">
+<title>Dog Age Calculator: Dog Years to Human Years | Pawport</title>
+<meta name="description" content="Free dog age calculator, convert dog years to human years by size, the accurate way (not the 7× myth), plus your dog's current life stage.">
 <link rel="canonical" href="https://pawport.space/tools/dog-age-calculator">
 <meta property="og:title" content="Dog Age Calculator: Dog Years to Human Years">
-<meta property="og:description" content="Convert dog years to human years by size — the accurate way, not the 7× myth.">
+<meta property="og:description" content="Convert dog years to human years by size, the accurate way, not the 7× myth.">
 <meta property="og:image" content="https://pawport.space/assets/blog_puppy_year.jpg">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
@@ -18,7 +18,7 @@
 {"@context":"https://schema.org","@type":"WebApplication","name":"Dog Age Calculator","url":"https://pawport.space/tools/dog-age-calculator","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Pawport"}}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is one dog year really seven human years?","acceptedAnswer":{"@type":"Answer","text":"No. Dogs mature much faster in their first two years (about 15 and 9 human years), then age 4–7 human years per year depending on size. Small dogs age slower after maturity; giant breeds age fastest."}},{"@type":"Question","name":"Why do small dogs live longer than big dogs?","acceptedAnswer":{"@type":"Answer","text":"Larger dogs age faster at the cellular level — a giant breed can be senior at six, while a small breed may not be senior until ten or eleven."}}]}
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is one dog year really seven human years?","acceptedAnswer":{"@type":"Answer","text":"No. Dogs mature much faster in their first two years (about 15 and 9 human years), then age 4–7 human years per year depending on size. Small dogs age slower after maturity; giant breeds age fastest."}},{"@type":"Question","name":"Why do small dogs live longer than big dogs?","acceptedAnswer":{"@type":"Answer","text":"Larger dogs age faster at the cellular level, a giant breed can be senior at six, while a small breed may not be senior until ten or eleven."}}]}
 </script>
 </head>
 <body>
@@ -40,7 +40,7 @@
   <div class="wrap narrow">
     <div class="tagrow"><span class="tag">Free tool</span></div>
     <h1>Dog Age Calculator 🎂</h1>
-    <p class="lede">The 7× rule is a myth — dogs sprint through their first two years, then age by size. Here's the real number.</p>
+    <p class="lede">The 7× rule is a myth, dogs sprint through their first two years, then age by size. Here's the real number.</p>
   </div>
 </header>
 
@@ -58,14 +58,14 @@
     </div>
     <label for="size">Size</label>
     <select id="size">
-      <option value="small">Small — under 10 kg (Shih Tzu, Chihuahua, Dachshund)</option>
-      <option value="medium">Medium — 10–25 kg (Beagle, Border Collie, Bulldog)</option>
-      <option value="large">Large — 25–40 kg (Labrador, Golden, Shepherd)</option>
-      <option value="giant">Giant — 40+ kg (Great Dane, Mastiff, Bernese)</option>
+      <option value="small">Small, under 10 kg (Shih Tzu, Chihuahua, Dachshund)</option>
+      <option value="medium">Medium, 10–25 kg (Beagle, Border Collie, Bulldog)</option>
+      <option value="large">Large, 25–40 kg (Labrador, Golden, Shepherd)</option>
+      <option value="giant">Giant, 40+ kg (Great Dane, Mastiff, Bernese)</option>
     </select>
     <button class="toolbtn" onclick="calc()">Calculate 🐾</button>
     <div class="result" id="out"></div>
-    <p class="toolnote">Based on veterinary aging charts: ~15 human years in year one, ~9 in year two, then 4–7 per year by size. Every dog writes their own curve — this is the honest estimate.</p>
+    <p class="toolnote">Based on veterinary aging charts: ~15 human years in year one, ~9 in year two, then 4–7 per year by size. Every dog writes their own curve, this is the honest estimate.</p>
   </div>
 
   <article style="padding-top:34px">
@@ -74,7 +74,7 @@
 
   <a class="appcta" href="https://apps.apple.com/app/id6780046088">
     <img src="/assets/icon.png" alt="Pawport app icon">
-    <div class="t"><b>Give every year its pages</b><span>Pawport turns your dog's life into an official little passport — birthdays included.</span></div>
+    <div class="t"><b>Give every year its pages</b><span>Pawport turns your dog's life into an official little passport, birthdays included.</span></div>
     <span class="go">Get the app</span>
   </a>
 </main>
@@ -104,8 +104,8 @@ function calc() {
   out.className = 'result on';
   out.innerHTML = '<span class="big">≈ ' + Math.round(human) + ' human years</span>' +
     '<div class="sub">life stage: ' + stage + '</div>' +
-    '<p>' + (age < 2 ? "The early years count the most — a dog does two decades of growing up before their second birthday." :
-      stage.indexOf('senior') >= 0 ? "Twice-yearly checkups from here — a dog year is now " + perYear + " of ours." :
+    '<p>' + (age < 2 ? "The early years count the most, a dog does two decades of growing up before their second birthday." :
+      stage.indexOf('senior') >= 0 ? "Twice-yearly checkups from here, a dog year is now " + perYear + " of ours." :
       "Aging about " + perYear + " human years per calendar year at this size.") + '</p>';
 }
 calc();
