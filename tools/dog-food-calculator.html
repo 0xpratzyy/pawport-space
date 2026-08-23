@@ -17,6 +17,9 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebApplication","name":"Dog Food Calculator","url":"https://pawport.space/tools/dog-food-calculator","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Pawport"}}
 </script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much should I feed my dog?", "acceptedAnswer": {"@type": "Answer", "text": "Start from resting energy requirement, seventy times body weight in kilos to the power of 0.75, multiplied by a life stage factor of roughly 1.6 for a neutered adult. Then adjust over three to four weeks using a weekly rib check."}}, {"@type": "Question", "name": "How many cups of food is that?", "acceptedAnswer": {"@type": "Answer", "text": "Divide daily calories by the calories per cup on your bag, usually between 300 and 500. Because that figure varies between brands, weighing in grams is more reliable than measuring in cups."}}, {"@type": "Question", "name": "How often should a dog eat?", "acceptedAnswer": {"@type": "Answer", "text": "Twice a day suits most adult dogs. Puppies need three to four meals until roughly six months. Large deep-chested breeds do better with smaller, more frequent meals and a quiet period around eating."}}, {"@type": "Question", "name": "My dog is always hungry, am I underfeeding?", "acceptedAnswer": {"@type": "Answer", "text": "Often not, since many dogs behave hungry regardless of intake. Judge by body condition rather than enthusiasm. A sudden change to ravenous appetite in a normally moderate dog is worth a vet visit."}}, {"@type": "Question", "name": "How fast should a dog lose weight?", "acceptedAnswer": {"@type": "Answer", "text": "Around one to two percent of body weight per week, which means months rather than weeks for most dogs. Faster loss is hard on them and rarely lasts."}}]}
+</script>
 </head>
 <body>
 
@@ -61,6 +64,61 @@
     <div class="result" id="out"></div>
     <p class="toolnote">Formula: RER = 70 × kg<sup>0.75</sup>, multiplied by life stage. Weigh the food, do the weekly rib check, and adjust to the dog in front of you, the full logic is in the <a href="/blog/how-much-should-i-feed-my-dog">feeding guide</a>.</p>
   </div>
+
+  <article style="padding-top:34px">
+    <h2>How the number is worked out</h2>
+    <p>Every feeding guideline starts from resting energy requirement, the calories a dog burns doing nothing at all. The standard formula is seventy multiplied by body weight in kilos raised to the power of 0.75. That exponent is the important part: energy needs do not scale in a straight line with weight, which is why a thirty kilo dog does not eat three times what a ten kilo dog eats.</p>
+    <p>Resting energy is then multiplied by a life stage factor: roughly 1.6 for a typical neutered adult, 1.8 for an intact or active one, 2.0 and up for working dogs, 2.5 to 3.0 for growing puppies, and around 1.4 when the goal is gentle weight loss. Divide the result by the calories per cup printed on your bag and you have a daily amount.</p>
+
+    <h2>Rough daily calories by weight</h2>
+    <table>
+      <tr><th>Weight</th><th>Adult, neutered</th><th>Active adult</th><th>Puppy, growing</th><th>Weight loss</th></tr>
+      <tr><td>5 kg</td><td>370 kcal</td><td>420 kcal</td><td>600 to 700 kcal</td><td>330 kcal</td></tr>
+      <tr><td>10 kg</td><td>630 kcal</td><td>710 kcal</td><td>990 to 1180 kcal</td><td>550 kcal</td></tr>
+      <tr><td>20 kg</td><td>1060 kcal</td><td>1190 kcal</td><td>1660 to 1990 kcal</td><td>930 kcal</td></tr>
+      <tr><td>30 kg</td><td>1440 kcal</td><td>1620 kcal</td><td>2250 to 2700 kcal</td><td>1260 kcal</td></tr>
+      <tr><td>40 kg</td><td>1780 kcal</td><td>2000 kcal</td><td>2790 to 3340 kcal</td><td>1560 kcal</td></tr>
+    </table>
+    <p>These are starting points, not prescriptions. Two dogs of identical weight can differ by a quarter in what they actually need, which is why the rib check below beats any chart including this one.</p>
+
+    <h2>The check that matters more than the maths</h2>
+    <p>Run your hands along your dog's sides once a week. You want to feel ribs under a thin layer, the way the back of your hand feels over its knuckles. If you have to press to find them, reduce the daily amount by around ten percent and check again in three weeks. If they feel sharp with no covering at all, go the other way.</p>
+    <p>Looking down from above, there should be a visible waist behind the ribs. From the side, the belly should tuck up rather than run parallel to the ground. Both are easier to judge than a number on a scale, particularly with fluffy dogs where the coat hides everything.</p>
+
+    <h2>Where the bag on the shelf goes wrong</h2>
+    <ul>
+      <li><strong>Feeding guidelines run generous.</strong> They are usually written for active intact dogs, and most pets are neither. Treat the bag as an upper bound.</li>
+      <li><strong>Cups are not a unit.</strong> Kibble density varies enough that the same scoop can differ by a third between brands. A cheap kitchen scale removes the guesswork permanently.</li>
+      <li><strong>Treats are food.</strong> They should stay under about a tenth of daily calories, and training sessions blow past that faster than anyone expects. Count them or subtract them from meals.</li>
+      <li><strong>Neutering lowers requirements.</strong> Often by twenty to thirty percent, and the change is gradual enough to miss until the weight is already on.</li>
+    </ul>
+
+    <h2>Adjusting for the dog you have</h2>
+    <p><strong>Puppies</strong> need two to three times resting energy and should eat three to four meals a day until around six months, then twice daily. Their needs fall noticeably once growth finishes, and continuing puppy portions past that point is one of the most common routes to an overweight adult.</p>
+    <p><strong>Seniors</strong> usually need slightly less as activity drops, though some older dogs need more if they are losing muscle. This is the life stage where an unexplained change in appetite or weight is worth a vet conversation rather than a portion adjustment.</p>
+    <p><strong>Multi-dog households</strong> are where portion control quietly fails, because the fast eater finishes and starts on the slow eater's bowl. Feeding in separate rooms costs nothing and fixes it.</p>
+
+    <h2>Common questions</h2>
+    <h3>How much should I feed my dog?</h3>
+    <p>Start from the calculator above, then adjust by feel over three to four weeks using the rib check. The starting number gets you close and the weekly check gets you right.</p>
+
+    <h3>How many cups is that?</h3>
+    <p>Divide the daily calories by the calories per cup on your bag, which is usually between 300 and 500. Because that figure varies so much between brands, weighing in grams is more reliable than measuring in cups.</p>
+
+    <h3>How often should a dog eat?</h3>
+    <p>Twice a day suits most adult dogs. Puppies need three to four meals until roughly six months. Large deep-chested breeds do better with smaller, more frequent meals and a quiet period around eating.</p>
+
+    <h3>Should I feed by weight or by calories?</h3>
+    <p>Calories, then convert to grams for your specific food. Feeding by weight of food alone ignores that two kibbles can differ substantially in energy density.</p>
+
+    <h3>My dog is always hungry, am I underfeeding?</h3>
+    <p>Often not. Many dogs behave hungry regardless of intake. Judge by body condition rather than enthusiasm, and if a normally moderate dog becomes suddenly ravenous, that is worth a vet visit rather than a bigger bowl.</p>
+
+    <h3>How fast should a dog lose weight?</h3>
+    <p>Slowly. Around one to two percent of body weight per week is the usual target, which means months rather than weeks for most dogs. Faster loss is hard on them and rarely sticks.</p>
+
+    <p>The full reasoning lives in the <a href="/blog/how-much-should-i-feed-my-dog">feeding guide</a>, the <a href="/tools/is-my-dog-overweight-quiz">weight check</a> takes a minute, and <a href="/tools/dog-water-calculator">water needs</a> are worth knowing alongside food.</p>
+  </article>
 
   <a class="appcta" href="https://apps.apple.com/app/id6780046088">
     <img src="/assets/icon.png" alt="Pawport app icon">
