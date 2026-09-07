@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "packs": [
     {
       "id": "renaissance",
@@ -28,6 +28,13 @@
       "subtitle": "First fluff on the moon.",
       "prompt": "retro NASA portrait of the dog as an astronaut, space helmet, 1969 film grain",
       "accent": "#2B2118"
+    },
+    {
+      "id": "mugshot",
+      "title": "Wanted Poster",
+      "subtitle": "Charged with stealing socks.",
+      "prompt": "police booking mugshot of the dog holding a placard that reads CHARGED WITH STEALING SOCKS, height chart wall, harsh flash, deadpan comedy",
+      "accent": "#4A4E57"
     }
   ]
 }
