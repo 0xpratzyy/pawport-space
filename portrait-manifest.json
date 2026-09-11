@@ -1,40 +1,141 @@
 {
-  "version": 2,
+  "version": 3,
   "packs": [
     {
       "id": "renaissance",
       "title": "Renaissance Pup",
       "subtitle": "Oil on canvas. Extremely dignified.",
       "prompt": "renaissance oil painting portrait of the dog, ornate gold frame, dramatic lighting, museum quality",
-      "accent": "#D89B4A"
+      "accent": "#D89B4A",
+      "category": "royal"
+    },
+    {
+      "id": "general",
+      "title": "The General",
+      "subtitle": "Medals earned in the garden.",
+      "prompt": "military general oil portrait of the dog, red uniform, medals, ornate frame",
+      "accent": "#7A2E2E",
+      "category": "royal"
+    },
+    {
+      "id": "roses",
+      "title": "Queen of Roses",
+      "subtitle": "Crowned in the flower bed.",
+      "prompt": "romantic oil portrait of the dog with a crown of pink roses",
+      "accent": "#E2839B",
+      "category": "royal"
     },
     {
       "id": "palace",
       "title": "Palace Portrait",
       "subtitle": "Imperial lapdog heritage, restored.",
       "prompt": "imperial chinese palace portrait of the dog, silk robes, jade ornaments, royal court painting style",
-      "accent": "#2E6B5E"
+      "accent": "#2E6B5E",
+      "category": "royal"
+    },
+    {
+      "id": "minimal",
+      "title": "Modern Minimal",
+      "subtitle": "Clean lines. Gallery wall material.",
+      "prompt": "minimalist flat illustration of the dog, solid colour background",
+      "accent": "#5B6B8A",
+      "category": "modern"
     },
     {
       "id": "storybook",
       "title": "Storybook Watercolor",
       "subtitle": "Soft, warm, suspiciously heroic.",
       "prompt": "gentle watercolor storybook illustration of the dog, soft pastel palette, children's book style",
-      "accent": "#F2728C"
-    },
-    {
-      "id": "astro",
-      "title": "Space Program",
-      "subtitle": "First fluff on the moon.",
-      "prompt": "retro NASA portrait of the dog as an astronaut, space helmet, 1969 film grain",
-      "accent": "#2B2118"
+      "accent": "#F2728C",
+      "category": "modern"
     },
     {
       "id": "mugshot",
       "title": "Wanted Poster",
       "subtitle": "Charged with stealing socks.",
       "prompt": "police booking mugshot of the dog holding a placard that reads CHARGED WITH STEALING SOCKS, height chart wall, harsh flash, deadpan comedy",
-      "accent": "#4A4E57"
+      "accent": "#4A4E57",
+      "category": "funny"
+    },
+    {
+      "id": "employee",
+      "title": "Employee of the Month",
+      "subtitle": "Twelve months running.",
+      "prompt": "employee of the month office headshot of the dog with a brass plaque",
+      "accent": "#3E5C76",
+      "category": "funny"
+    },
+    {
+      "id": "superhero",
+      "title": "Comic Cover",
+      "subtitle": "Issue #1. The origin story.",
+      "prompt": "vintage comic book cover of the dog as a superhero",
+      "accent": "#D6452E",
+      "category": "funny"
+    },
+    {
+      "id": "popart",
+      "title": "Pop Art",
+      "subtitle": "Four moods, one dog.",
+      "prompt": "warhol style four panel pop art of the dog",
+      "accent": "#F2B705",
+      "category": "funny"
+    },
+    {
+      "id": "noir",
+      "title": "Film Noir",
+      "subtitle": "The case of the missing treat.",
+      "prompt": "black and white film noir detective portrait of the dog",
+      "accent": "#2B2B2B",
+      "category": "funny"
+    },
+    {
+      "id": "astro",
+      "title": "Space Program",
+      "subtitle": "First fluff on the moon.",
+      "prompt": "retro NASA portrait of the dog as an astronaut, space helmet, 1969 film grain",
+      "accent": "#2B2118",
+      "category": "funny"
+    },
+    {
+      "id": "travel",
+      "title": "Travel Poster",
+      "subtitle": "Greetings from the park.",
+      "prompt": "vintage 1950s travel poster of the dog at a scenic park",
+      "accent": "#2E8B8B",
+      "category": "moments"
+    },
+    {
+      "id": "birthday",
+      "title": "Birthday Card",
+      "subtitle": "Cake, hat, zero regrets.",
+      "prompt": "birthday card illustration of the dog with a party hat and cake",
+      "accent": "#FF8FA3",
+      "category": "seasonal"
+    },
+    {
+      "id": "xmas",
+      "title": "Christmas Card",
+      "subtitle": "Merry woofmas, from the sweater.",
+      "prompt": "christmas card illustration of the dog in a knitted sweater by the tree",
+      "accent": "#B23A48",
+      "category": "seasonal"
+    },
+    {
+      "id": "together",
+      "title": "Best Friends",
+      "subtitle": "Two dogs, one frame.",
+      "prompt": "painted portrait of two dogs side by side as best friends",
+      "accent": "#E0A458",
+      "category": "together"
+    },
+    {
+      "id": "memorial",
+      "title": "Forever in the Book",
+      "subtitle": "Soft light. A halo. Always here.",
+      "prompt": "gentle memorial portrait of the dog with soft light and a faint halo",
+      "accent": "#C9B6E4",
+      "category": "forever"
     }
   ]
 }
