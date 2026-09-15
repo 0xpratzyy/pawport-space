@@ -9,6 +9,13 @@
 <meta property="og:title" content="Pawport: a dog journal app that looks like a passport">
 <meta property="og:description" content="Log every walk, bath and zoomie in a dog diary that stamps itself into an official little passport.">
 <meta property="og:image" content="https://pawport.space/assets/shot_hero.jpg">
+<meta property="og:url" content="https://pawport.space/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pawport: a dog journal app that looks like a passport">
+<meta name="twitter:description" content="Log every walk, bath and zoomie in a dog diary that stamps itself into an official little passport.">
+<meta name="twitter:image" content="https://pawport.space/assets/shot_hero.jpg">
+<link rel="canonical" href="https://pawport.space/">
 <link rel="icon" href="assets/icon.png">
 <style>
   @font-face { font-family: 'Baloo'; src: url('assets/Baloo2-ExtraBold.ttf'); font-weight: 800; }
@@ -169,6 +176,24 @@
     .lead { font-size: 17px; }
     footer { padding-bottom: calc(40px + env(safe-area-inset-bottom)); }
   }
+
+  .seo { max-width: 1100px; margin: 0 auto; padding: 56px 24px 8px; }
+  .seo h2 { font-size: 30px; line-height: 1.1; margin-bottom: 12px; }
+  .seo p { font-family: system-ui, -apple-system, sans-serif; font-size: 17px; line-height: 1.6; color: #3a3a44; max-width: 68ch; margin-bottom: 14px; }
+  .seo .cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 22px 0 8px; }
+  .seo .col { background: var(--pill); border-radius: 18px; padding: 18px 18px 14px; }
+  .seo .col h3 { font-size: 18px; margin-bottom: 8px; }
+  .seo .col ul { list-style: none; font-family: system-ui, -apple-system, sans-serif; font-size: 15px; line-height: 1.5; }
+  .seo .col li { margin: 4px 0; }
+  .seo .col a { color: var(--blue); text-decoration: none; font-weight: 600; }
+  .seo .col a:hover { text-decoration: underline; }
+  .seo .faq { margin-top: 28px; }
+  .seo details { border-top: 1px solid #e6e6ea; padding: 14px 0; }
+  .seo details:last-child { border-bottom: 1px solid #e6e6ea; }
+  .seo summary { cursor: pointer; font-weight: 800; font-size: 17px; list-style: none; }
+  .seo summary::-webkit-details-marker { display: none; }
+  .seo details p { margin: 10px 0 0; font-size: 15px; }
+  @media (max-width: 720px) { .seo .cols { grid-template-columns: 1fr; } .seo h2 { font-size: 26px; } }
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","name":"Pawport","url":"https://pawport.space","logo":"https://pawport.space/assets/icon.png","description":"The passport app for dogs: walks, milestones and health records become stamped pages in an official little book."}
@@ -206,9 +231,9 @@
       <a class="btn btn-ghost" href="#covers">See the covers</a>
     </div>
     <div class="stage">
-      <img class="side-cover left" src="assets/cover_velvet_emerald.jpg" alt="Royal velvet cover">
-      <img class="side-cover right" src="assets/cover_quilted_blush.jpg" alt="Quilted puffer cover">
-      <div class="phone"><img src="assets/app_hero.jpg" alt="Pawport app, teddy fur passport"></div>
+      <img class="side-cover left" src="assets/cover_velvet_emerald.jpg" alt="Royal velvet cover" loading="lazy">
+      <img class="side-cover right" src="assets/cover_quilted_blush.jpg" alt="Quilted puffer cover" loading="lazy">
+      <div class="phone"><img src="assets/app_hero.jpg" alt="Pawport app, teddy fur passport" loading="lazy"></div>
     </div>
   </div>
 </section>
@@ -220,11 +245,11 @@
     <p class="lead">Six materials, eighteen colourways, your dog's name on the plate. Teddy fur to royal velvet.</p>
   </div>
   <div class="marquee"><div class="marquee-track" id="track">
-    <img class="cover-card" src="assets/cover_teddy_caramel.jpg" alt="Teddy fur cover">
-    <img class="cover-card" src="assets/cover_quilted_blush.jpg" alt="Quilted puffer cover">
-    <img class="cover-card" src="assets/cover_knit_sky.jpg" alt="Knit cover">
-    <img class="cover-card" src="assets/cover_corduroy_rust.jpg" alt="Corduroy scout cover">
-    <img class="cover-card" src="assets/cover_velvet_emerald.jpg" alt="Royal velvet cover">
+    <img class="cover-card" src="assets/cover_teddy_caramel.jpg" alt="Teddy fur cover" loading="lazy">
+    <img class="cover-card" src="assets/cover_quilted_blush.jpg" alt="Quilted puffer cover" loading="lazy">
+    <img class="cover-card" src="assets/cover_knit_sky.jpg" alt="Knit cover" loading="lazy">
+    <img class="cover-card" src="assets/cover_corduroy_rust.jpg" alt="Corduroy scout cover" loading="lazy">
+    <img class="cover-card" src="assets/cover_velvet_emerald.jpg" alt="Royal velvet cover" loading="lazy">
   </div></div>
 </section>
 
@@ -235,12 +260,12 @@
     <p class="lead">Snap a photo, the Bureau does the stamp, the caption and the paw of approval.</p>
   </div>
   <div class="shot-row">
-    <img class="shot" src="assets/shot_hero.jpg" alt="Passport cover">
-    <img class="shot" src="assets/shot_pages.jpg" alt="Stamped pages">
-    <img class="shot" src="assets/shot_picker.jpg" alt="Cover picker">
-    <img class="shot" src="assets/shot_profile.jpg" alt="Dog profile">
-    <img class="shot" src="assets/shot_diary.jpg" alt="Diary calendar">
-    <img class="shot" src="assets/shot_garnish.jpg" alt="Art department">
+    <img class="shot" src="assets/shot_hero.jpg" alt="Passport cover" loading="lazy">
+    <img class="shot" src="assets/shot_pages.jpg" alt="Stamped pages" loading="lazy">
+    <img class="shot" src="assets/shot_picker.jpg" alt="Cover picker" loading="lazy">
+    <img class="shot" src="assets/shot_profile.jpg" alt="Dog profile" loading="lazy">
+    <img class="shot" src="assets/shot_diary.jpg" alt="Diary calendar" loading="lazy">
+    <img class="shot" src="assets/shot_garnish.jpg" alt="Art department" loading="lazy">
   </div>
 </section>
 
@@ -262,13 +287,50 @@
     <div class="kicker">The record</div>
     <h2>filed under: days we will not forget</h2>
     <div class="pols">
-      <div class="pol"><img src="assets/photo_walk1.jpg" alt="Walk"><span>morning patrol 🐾</span></div>
-      <div class="pol"><img src="assets/photo_bath.jpg" alt="Bath"><span>the bath incident</span></div>
-      <div class="pol"><img src="assets/photo_birthday.jpg" alt="Birthday"><span>third birthday!!</span></div>
-      <div class="pol"><img src="assets/photo_beach.jpg" alt="Beach"><span>first beach day</span></div>
+      <div class="pol"><img src="assets/photo_walk1.jpg" alt="Walk" loading="lazy"><span>morning patrol 🐾</span></div>
+      <div class="pol"><img src="assets/photo_bath.jpg" alt="Bath" loading="lazy"><span>the bath incident</span></div>
+      <div class="pol"><img src="assets/photo_birthday.jpg" alt="Birthday" loading="lazy"><span>third birthday!!</span></div>
+      <div class="pol"><img src="assets/photo_beach.jpg" alt="Beach" loading="lazy"><span>first beach day</span></div>
     </div>
   </div>
 </section>
+
+
+<section class="seo" id="about">
+  <h2>a dog journal app, shaped like a passport</h2>
+  <p>Pawport is a dog journal app for iPhone. Instead of a feed or a spreadsheet, your dog gets an official little passport: a cover with their name on the plate, an identity page, and a stamp for every day worth keeping. Walks, baths, vet visits, first snow, the sock they stole. Snap a photo and the Bureau of Very Good Dogs files it with a caption, a date and the paw of approval.</p>
+  <p>It is also the dog diary that writes itself. On-device photo scanning finds your dog in your camera roll and suggests stamps, walk mode records the route and the friends met on the way, and the health drawer keeps vaccinations, weight and documents with reminders. The Studio paints your dog in seventeen styles from your own photos, from renaissance oil to a wanted poster, and files the portrait next to the moment it came from.</p>
+  <div class="cols">
+    <div class="col"><h3>Free dog tools</h3><ul>
+      <li><a href="/tools/dog-age-calculator">Dog age calculator</a> (the 7x rule is wrong)</li>
+      <li><a href="/tools/puppy-vaccine-schedule">Puppy vaccine schedule</a></li>
+      <li><a href="/tools/dog-food-calculator">Dog food portion calculator</a></li>
+      <li><a href="/tools/dog-water-calculator">Dog water intake calculator</a></li>
+      <li><a href="/tools/dog-heat-check">Is it too hot to walk my dog?</a></li>
+      <li><a href="/tools/dog-name-generator">Dog name generator</a></li>
+      <li><a href="/tools">All tools</a></li></ul></div>
+    <div class="col"><h3>Guides from the Bureau</h3><ul>
+      <li><a href="/blog/best-dog-journal-apps">Best dog journal apps in 2026</a></li>
+      <li><a href="/blog/dog-training-journal-app">Keeping a dog training journal</a></li>
+      <li><a href="/blog/how-long-should-i-walk-my-dog">How long should I walk my dog?</a></li>
+      <li><a href="/blog/puppy-vaccination-schedule">Puppy vaccination schedule</a></li>
+      <li><a href="/blog/dog-health-records">How to keep dog health records</a></li>
+      <li><a href="/blog/traveling-with-your-dog">Traveling with your dog</a></li>
+      <li><a href="/blog">All guides</a></li></ul></div>
+    <div class="col"><h3>One-panel dog truths</h3><ul>
+      <li><a href="/comics/the-7x-rule-is-wrong">The 7x rule is wrong</a></li>
+      <li><a href="/comics/wag-doesnt-mean-happy">A wag doesn't mean happy</a></li>
+      <li><a href="/comics/guilty-look-isnt-guilt">The guilty look isn't guilt</a></li>
+      <li><a href="/comics/pavement-7-second-test">The pavement 7-second test</a></li>
+      <li><a href="/comics/grapes-are-an-emergency">Grapes are an emergency</a></li>
+      <li><a href="/comics">All comics</a></li></ul></div>
+  </div>
+  <div class="faq">
+    <h2>questions people ask the clerk</h2>
+    <details><summary>Is Pawport a dog journal app or a health tracker?</summary><p>Both, in one book. Every walk, bath, vet visit and milestone becomes a stamped page, and the health drawer keeps vaccines, weight, medications and documents with reminders. You never have to choose between the memory app and the record-keeping app.</p></details><details><summary>Does Pawport work as a dog activity log?</summary><p>Yes. Walk mode records the route, time and distance and files it as a page. Baths, grooming, feeding and training days get their own stamps, so the passport doubles as an activity log you can flip through by month.</p></details><details><summary>Can my partner or family add entries too?</summary><p>Yes. Family sharing uses a five-digit code so everyone in the house writes to the same passport, including feeding times, so nobody feeds the dog twice.</p></details><details><summary>Where are my dog's photos stored?</summary><p>In your own iCloud. Photo scanning to find your dog in your library happens on the phone. The only time a photo leaves the device is when you ask the Studio to paint a portrait, and it is used for that one job and not stored.</p></details><details><summary>Is Pawport free?</summary><p>Pawport is free, including the passport, stamps, health records, walks and family sharing. Pawport Plus is an optional subscription for every passport cover, monthly portrait credits and a passport for every dog in the house.</p></details>
+  </div>
+</section>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is Pawport a dog journal app or a health tracker?", "acceptedAnswer": {"@type": "Answer", "text": "Both, in one book. Every walk, bath, vet visit and milestone becomes a stamped page, and the health drawer keeps vaccines, weight, medications and documents with reminders. You never have to choose between the memory app and the record-keeping app."}}, {"@type": "Question", "name": "Does Pawport work as a dog activity log?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Walk mode records the route, time and distance and files it as a page. Baths, grooming, feeding and training days get their own stamps, so the passport doubles as an activity log you can flip through by month."}}, {"@type": "Question", "name": "Can my partner or family add entries too?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Family sharing uses a five-digit code so everyone in the house writes to the same passport, including feeding times, so nobody feeds the dog twice."}}, {"@type": "Question", "name": "Where are my dog's photos stored?", "acceptedAnswer": {"@type": "Answer", "text": "In your own iCloud. Photo scanning to find your dog in your library happens on the phone. The only time a photo leaves the device is when you ask the Studio to paint a portrait, and it is used for that one job and not stored."}}, {"@type": "Question", "name": "Is Pawport free?", "acceptedAnswer": {"@type": "Answer", "text": "Pawport is free, including the passport, stamps, health records, walks and family sharing. Pawport Plus is an optional subscription for every passport cover, monthly portrait credits and a passport for every dog in the house."}}]}</script>
 
 <div class="wrap" id="get">
   <section class="cta">
@@ -279,7 +341,7 @@
 </div>
 
 <footer>
-  <img src="assets/icon.png" width="44" style="border-radius:10px; display:block; margin:0 auto 10px;" alt="">
+  <img src="assets/icon.png" width="44" style="border-radius:10px; display:block; margin:0 auto 10px;" alt="" loading="lazy">
   Pawport · Bureau of Very Good Dogs<br>
   <a href="/blog">Blog</a> · <a href="/tools">Tools</a> · <a href="/comics">Comics</a> · <a href="/privacy">Privacy</a> · <a href="mailto:team@innercircle.so">Contact</a>
 </footer>
